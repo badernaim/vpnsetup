@@ -1,0 +1,925 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage{blindtext, graphicx}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% \usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+%\let\lemma\relax
+%\let\endlemma\relax
+% \newtheorem{lemma}[theorem]{Lemma}
+% \renewcommand\thelemma{\unskip}
+\newtheorem{lemm}[theorem]{Lemma}
+\newtheorem{corollari}{Corollary}[theorem]
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Selecting IoT Sensors With Time-sensitive Data Values}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+% \author{\IEEEauthorblockN{Michael Shell}
+% \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+% University of British Columnbia\\
+% Vancouver, Canada\\
+% email@ece.ubc.ca}
+% \and
+% \IEEEauthorblockN{Homer Simpson}
+% \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+% University of British Columnbia\\
+% Vancouver, Canada\\
+% email@ece.ubc.ca}
+% \and
+% \IEEEauthorblockN{James Kirk}
+% \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+% University of British Columnbia\\
+% Vancouver, Canada\\
+% email@ece.ubc.ca}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+To be added
+%\boldmath
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+% IEEEtran, journal, \LaTeX, paper, template.
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+As the Internet of Things (IoT) is being adopted more widely, the number of sensors deployed all around the world is growing at a rapid pace \cite{perera2014}. These sensors generate gigantic amounts of data. On the other hand, in order to take advantage from raw sensor data, we need to perform a chain of tasks including data gathering, modelling and reasoning. While all the tasks are important, data collection has more importance in the sense that it prepares the raw data for further analysis. Since raw data from all sensors is enormous, naive data collection to collect all data is absolutely too expensive. Therefore, we ideally want to collect useful sensor data in a timely manner such that we receive important data without collecting all sensor generated data.
+
+Quick detection is important because some content may lose value after a short time period. An example may be traffic intensity information at an intersection which is valuable when someone is planning their travel route, and any data obtained late is not of much value.Discerning when a data source is important is difficult because there are no obvious cues in a general setting. One will need to use certain aspects of the content – the meta data– as features that help in the identification process.  In the IoT context,less metadata may be available but we will still need to prioritize data flows when resources(storage, bandwidth, power) are limited. We want to explore problems related to prioritizing content sources in different set-tings.  These settings can be classified, at least partially, along three dimensions:  (i) re-source limitations (ii) number of features (iii) and content personalization. Prioritizing content in an IoT context may be a problem with significant resource constraints, limited features,  and high personalization. 
+
+\section{Model}
+Consider a multi-armed bandits setting where there are $N$ sensors $\left \{ S_1, ..., S_N \right \}$. At each sensor, data has initial value $\nu$ (non-negative r.v.) and this value decreases exponentially with rate $\beta_i$. This means that data collected $t$ units of time after it was initially sensed has value of $\nu_i e^{\beta_i t}$. We assume $\nu_i$ is $i.i.d$ and that $\bar{\nu}$ is finite. Also, we assume that data is collected periodically with period $P>0$. At each collection period, we select the sensors to pull and sense events data. New events are sensed at rate $\mu$ according to a Poisson process. The expected utility/value from pulling sensor $S_i$ is:
+\begin{align*}
+  U_i & = \mu_i E\left [\nu_i e^{-\beta_i t}  \right ]\\
+  &= \frac{\mu_i}{\beta_i} \bar{\nu_i} \left [1 - e^{\beta_i P}  \right ] 
+\end{align*}
+where we define $\alpha_i:= e^{-\beta_i P}$. 
+
+Each sensor may have sensed multiple events between two sampling instants. Let $X_i(t)$ be the expected value of $S_i$ at time $t$. This is also the state of $S_i$ at time t. Let $a_i(t)$ be the action taken for $S_i$ at time t, which is defined as follows:
+\begin{equation}
+          a_i(t)=
+          \left\{
+            \begin{array}{ll}
+              1, &  sense\\
+              0, & otherwise
+            \end{array}
+          \right \}
+\end{equation}
+
+The state evolves differently based on the action taken at each time. To be more precise, there are two cases: First, if $a_i(t)=0$, no reward is obtained (i.e. $r_i(t) = r_i(X_i(t), a_i(t)) = 0$) and the state will be changed at next pulling period such that: $X_i(t+P) = \alpha_i X_i(t) + U$. Second, if $a_i(t) = 1$ (i.e. the arm is pulled), the obtained reward would be value that has been accumulated up until now that is: $r_i(t) = r_i(X_i(t), a_i(t)) = X_i(t)$. In this case, the state evolves such that it is reset to its defined value: $X_i(t+P) = U_i$. Having this model, the objective is to maximize infinite horizon reward defined as following: 
+\begin{equation}
+          \lim_{j \rightarrow \infty} sup \sum_{i=1}^{N} \frac{1}{j} \sum_{m=0}^{j} r_i(X_i(jP), a_i(jP))
+\end{equation}
+where j is the number of pulling periods. There is also a ``bandwidth-like'' defined as:
+\begin{equation}
+          \lim_{j\rightarrow\infty} \sum_{i=1}^{N} \frac{1}{j} \sum_{m=0}^{j} \gamma_i a_i(jP)=M
+\end{equation}
+where $\gamma_i$ is the required ``bandwidth'' of $S_i$.
+
+While our model is close to the definition of ``classic restless bandit'' problem \cite{whittle1988}, there is actually a major difference in terms of the state space of the problem. The classic problem setting is formulated over discrete state-space Markov Chains though our model is assumed to be Markov Chains with closed domains in continuous state space ($X \subset \mathbb{R}^n, n\geq1$).
+\section{Indexability}
+Let $X_i$ be the state space for the $i$th arm. $X_i(t)$ is the state at time $t$. Rewards dynamics based on picking an arm: $p_i(dy|x)$, $q_i(dy|x)$. Assume that space is continues and maps each state to a space of probability: $x \in X_i \mapsto P(X_i)$. The action at time $t$ is $A \in \left \{ 0, 1\right\}_N$ and $a(t)=\left [ a_1(t), ..., a_i(t), ...,a_N(t)\right ] $. In original restless bandit formulation, there are exactly $M$ active arms among $N$ avialable arms ($M<N$) and the objective is to maximize the infinite horizon award. However, Whittle's proposed an approach to reduce to $N$ separate problems and relaxed constraint of exactly M arms to M on average where the constraint is rewritten as follows:
+\begin{equation}
+    \limsup_{t\rightarrow\infty}\frac{1}{t} \sum_{j=0}^{t} E \left [\sum_{i=0}^{N} a_i(j) \right] = M
+\end{equation}
+Constrained average reward problem leads to a relaxed unconstrained problem with goal:
+\begin{equation}
+    Max \limsup_{t\rightarrow \infty} \sum_{i=1}^{N} \frac{1}{t} \sum_{j=0}^{t} E \left [ r_i(X_i(j), a_i(j) + \lambda(\frac{M}{N}-a_i(j)))\right ]
+\end{equation}
+where $\lambda$ is the Lagrange multiplier and becomes a subsidy for not playing an arm. If we treat each arm separately, the reward for each arm is 
+\begin{equation}
+    \limsup_{t \rightarrow \infty} \frac{1}{t} \sum_{j=0}^{t} E\left [ r_i(X_i(j), a_i(j)+ \lambda(\frac{M}{N}-a_i(j))\right]
+\end{equation}
+Therefore, the dynamic programming equation that we can write here is:
+\begin{equation}
+    V_i(x) = Max \left \{ \lambda + \int q_i(dy|x)V_i(y), r_i(x) + \int P_i(dy|x)V_i(y)\right \}
+\end{equation}
+where this equation needs to be justified. Let us assume that set of inactive states are defined as:
+\begin{equation}
+    I_i(\lambda):= \left \{x: \lambda + \int q_i(dy|x)V_i(y) \geq r_i(x)+ \int p_i(dy|x)V_i(y)\right \}
+\end{equation}
+which means that if $I_i(\lambda)$ increases monotonically from $\varnothing$ to $X_i$ as $\lambda$ moves from $-\infty$ to $+\infty$, then we have indexability. Now we want to show that dynamic programming is justifiable in our formulation. In our formulation, recall $r_i(x, 1)=x$ given that the state represents the utility. Let us define $\hat{u_i} := \frac{u_i}{1-\alpha_i} > u_i$. Now, without loss of generality, we claim that $X_i \in \left [u_i, \hat{u_i} \right]$ meaning that utility (i.e. reward) is bounded. To prove this boundedness, we know $X_i(0)=x_0$. 
+\begin{itemize}
+    \item (a) If $x_0 \leq \hat{u_i}$, it is easy to observe that:
+\begin{equation}
+    X_i(t) \leq \alpha_i^{t}x_0 + (1-\alpha_i^{t})\hat{u_i}
+\end{equation}
+In this case, $X_i$ approaches $\hat{u_i}$ if $S_i$ is never pulled.
+\item (b) If $x_0 > \hat{u_i}$:
+\begin{equation}
+    X_i(t)=\alpha_i^{t}x_0 + (1-\alpha_i^{t})\hat{u_i}
+\end{equation}
+where it approaches $\hat{u_i}$ if $S_i$ is never pulled. Even after one pull, it will be reduced to case (a) which was shown before.
+\end{itemize}
+Thus we can ignore $x_0 \in \left[u_i, \hat{u_i} \right]$ as transient when looking at the infinite horizon. 
+Let us now consider the average reward problem for $S_i$ using Lagrange multipliers:
+\begin{equation}
+    V_i(x_i, a):= xa + \gamma \lambda(1-a)
+\end{equation}
+Using discounting with discount factor $\rho$, the infinite horizon discounted reward is:
+\begin{equation}
+    \sum_{t=0}^{\infty} \rho^{t}V_i(X_i(t), a_i(t))
+\end{equation}
+The value function associated with this is:
+\begin{equation}
+    V_\rho(X) := \sup_{\left\{a(t), X(0)=x_0\right\}} \left [\sum_{t=0}^{\infty} \rho^{t}V_i((X(t), a(t))\right]
+\end{equation}
+where $V_\rho(.)$ satisfies the discounted reward. Now the dynamic programming equation could be written as:
+\begin{equation}
+    \label{dp1}
+    V_\rho(x) = max(\gamma \lambda + \rho V_\rho(\alpha_i x + u_i), x + \rho V_\rho(u_i))
+\end{equation}
+
+\begin{lemm}
+\label{lemma}
+The solution to equation ~\ref{dp1} has the following properties
+\begin{itemize}
+    \item (a) Equation \ref{dp1} has a unique bounded continuous solution     of $V_\rho$
+    \item (b) $V_\rho$ is Lipschitz uniformly in $\rho \in (0,1)$
+    \item (c) $V_\rho$ is monotone increasing and convex.
+\end{itemize}
+\end{lemm}
+
+
+
+\begin{proof}
+To prove part (a) of the lemma, we refer to the theory of Discrete Time Markov Chain (DTMC) where having a unique bounded continuous solution for $V_\rho$ is standard. For part (b), consider $x \neq {x}'>x \in X_i$. Consider processes $X_i(t)$ and ${X_i}'(t)$ with initial conditions $x$ and ${x}'$, respectively. Both processes are controlled by the same actions, $\left \{ a(t) \right \}$, which is optimal for $X_i(t)$. Then:
+
+\begin{eqnarray*}
+    V_\rho({x}')-V_\rho(x) & \leq & \sum_{t=0}^{\infty} \rho^{t}(V({X}'(t), a(t))-V(X(t), a(t))) \\  
+    %  & & \sum_{t=0}^{\infty} \rho^{t}(V({X}'(t), a(t))-V(X(t), a(t))) & \\
+                           & & = \left [\frac{(1-\alpha_i\rho)^{T}}{1-\alpha_i} \right]({x}'-x)
+\end{eqnarray*}
+where $T$ is the time of the first pull. Interchanging the roles of ${x}'$ and $x$, we can obtain a symmetric inequality. 
+\begin{eqnarray*}
+\therefore{}|V_\rho(x)-V_\rho({x}')| \leq \left [\frac{(1-\alpha\rho)^{T}}{1-\alpha} \right ] \left |x-{x}' \right |
+\end{eqnarray*}
+which is a Lipschitz!
+
+In order to prove (c), take ${x}' > x$ as specified in the previous part. Consider processes $X_i(t)$ and ${X_i}'(t)$ generated by a common action sequence $a(t)$ and their only difference is the initial conditions. We can easily verify that ${X}'(t) \geq X(t)$ for all $t$.
+\begin{eqnarray*}
+\therefore \sum_{t=0}^{\infty}\rho^t V({X}'(t), a(t)) \geq \sum_{t=0}^{\infty}\rho^t V(X(t), a(t))
+\end{eqnarray*}
+We can take the supremum over all valid action sets to establish monotonicity.
+
+For establishing convexity, let $V_{\rho, T}(x)$ be the finite horizon discounted value: 
+\begin{eqnarray*}
+V_{\rho,T}(x)= \sup_{\left\{a(t), X(0)=x_0\right\}} \sum_{t=0}^{T} \rho^{t} V(X(t), a(t))
+\end{eqnarray*}
+This satisfies the following dynamic programming equation: 
+\begin{eqnarray*}
+V_{\rho, T}(x) = max \left \{\gamma \lambda + \rho V_{rho, T-1}(\alpha_i x + u_i), x_i + \rho V_{\rho, T-1}(u_i) \right \}
+\end{eqnarray*}
+for $T \geq 1$ with $V_{\rho,0}(x)=x$. We can establish convexity by induction: 
+\begin{eqnarray*}
+V_{\rho} (x) = \lim_{T \rightarrow \infty} V_{\rho, T}(x)
+\end{eqnarray*}
+where $V_\rho(.)$ is also convex.
+\end{proof}
+
+As discussed before, reward is discounted over time (i.e. $\rho \rightarrow 1$). Now, let $\tilde{V_{\rho}(x)} = V_{\rho}(x)-V_{\rho}(u), x\in X_i$. By the lemma \ref{lemma}, $\tilde{V}_{\rho}(x)$ is bounded Lipschitz, monotone, and convex with $\tilde{V_{\rho}(u)}=0$. Also, it is clear that $(1-\rho)V_{\rho}(u)$ is bounded. From Bolzano-Weierstrass \cite{bartle2000} and Arzela-Ascoli \cite{poppe1974}, we can pick a sub-sequence such that $\tilde({V}_{\rho}(.), (1-p)V_{\rho}(u))$ converge to $(V, \xi)$. From equation \ref{dp1} we have:
+\begin{equation}
+    \label{eq16}
+    \tilde{V}_{\rho}(x) + (1-\rho)V_{\rho}(u)=max(\gamma \lambda + \rho \tilde{V}_{\rho}(\alpha_{i}x+u), x)
+\end{equation}
+As $\rho \rightarrow 1$, along an appropriate sub-sequence, equation \ref{eq16} will be:
+\begin{eqnarray}
+    \label{dp2}
+  V(x) + \xi & = max(\gamma \lambda + V(\alpha_i x + u), x) 
+    % & & = max_{a\in\left\{0,1\right \}} \left [ ax + (1-a)(\gamma_{i}\lambda + V(\alpha_{i}x+u_{i})\right ]
+\end{eqnarray}
+which could be written as:
+\begin{equation}
+    \label{dp3}
+    V(x) + \xi = max_{a\in\left\{0,1\right \}} \left [ ax + (1-a)(\gamma_{i}\lambda + V(\alpha_{i}x+u_{i})\right ] \\ 
+\end{equation}
+
+Now that we have derived the dynamic programming equation, we want to show that $V(.)$ is monotone increasing and convex with $V(x)=0$. This could be verified since pointwise limits preserve convexity and monotonicity.
+
+Also, we want to show the action that maximize $V(x)$ in equation \ref{dp3} is the optimal action at state $x$ and $\xi$ is the optimal reward. To establish this, consider the following argument. Let $a^{\star}(x)$ be the action that maximizes:
+\begin{equation}
+    \left [ ax + (1-a) (\gamma_i \lambda + V(\alpha_i x + u_i)) \right]
+\end{equation}
+If multiple actions maximizes the function then we can pick one of those actions arbitrarily.
+Under the condition of $\left \{a(t)=a^{\star}(X(t)), t ?? 0 \right \}$, we can write the following equation:
+\begin{equation}
+    V(X(t))+\xi = V(X(t),a(t)), V(X(t+1))
+\end{equation}
+Now, if we consider the average value of both sides over time:
+\begin{equation}
+    \label{average_reward_eq}
+    \underbrace{\frac{1}{T} \sum_{t=0}^{T}(V(X(t)+\xi)}_{L} = \underbrace{\frac{1}{T} \sum_{t=0}^{T}\left [V(X(t),a(t))+V(X(t+1)) \right ]}_{R}
+\end{equation}
+as $T\rightarrow \infty$, $\xi$ is the average reward per chosen control policy. For any other action set, we will have $L \geq R$ (equation \ref{average_reward_eq}) and hence $\xi$ is greater than equal the average reward under a different set of actions. This implies the optimality of $\xi$ which was the goal.
+
+Let us now define the set of states when we do not pull an arm as well as the states when we do pull an arm:
+\begin{align}
+  D^{c} & = \left \{x\in S: \gamma \lambda + V()\alpha x + u) > x \right \} \\
+  D & = \left \{x \in S: \gamma \lambda + V()\alpha x + u) > x \leq ? \right\}
+\end{align}
+
+If $t_0$ is the time of first pull and if $t_0<\infty$ $(t_0=\infty$ is the ``never pull'' case), by using optimal policy and iterating $t_0$ times with the optimal value function in equation \ref{dp2}, we can write the dynamic programming equation as following:
+\begin{equation}
+    V(x) = (\gamma \lambda - \xi)t_0 + \left [\alpha^t_0 x + (\frac{1-\alpha^t_0}{1-\alpha})u - \xi \right ]
+\end{equation}
+clearly, if we use a different policy that is not optimal, we will have:
+\begin{equation}
+    V(x) \geq (\gamma \lambda - \xi)t_0 + \left [\alpha^t_0 x + (\frac{1-\alpha^t_0}{1-\alpha})u - \xi \right ]    
+\end{equation}
+thus the explicit representation of $V(x)$ is:
+\begin{equation}
+    V(x) = max \left [(\gamma \lambda - \xi)t_0 + \left [\alpha^t_0 x + (\frac{1-\alpha^t_0}{1-\alpha})u - \xi \right ]\right ]
+\end{equation}
+where we maximize the reward over all action sequences. This implies that equation \ref{dp2} has a unique solution.
+
+\section{Index Calculation}
+Now, we show that a Whittle-like index exists for the problem. To prove the existence of an index, we know that $V(.)$ is monotone and convex. Also, the map $x :\rightarrow x-V(\alpha x + u)$ is concave and hence the set $D$ increases monotonically from $\varnothing$ (empty set) to $S$ as $\lambda$ is increased from $-\infty$ to $+\infty$.
+
+In the beginning, we shall show that some corner cases can be ignored. 
+\begin{enumerate}
+    \item If $u^{\text{start}} \in D$, that is the optimal action at $u^{\star}$ is 0, then $u^{\star}$ is a fixed point of the optimal control dynamics and the related cost is $\gamma \lambda$. Then, $\xi = \gamma \lambda$ and it is optimal not to pull the arm at all states: $\therefore D=\left [ u,u^{\star} \right ]$ and $D^{c}=\varnothing$. Then, the index would be calculated as:
+    \begin{equation}
+        \lambda \geq \lambda_u := max_{x\in \left [u, u^{\star} \right ]} (x-V(\alpha x + u))/\gamma
+    \end{equation}
+    \item If $u \in D^{c}$ , then: $0+\xi = u+0 \Rightarrow \xi = u$. This means that it is optimal to pull the arm when the reward is at $u$ and $u$ is a fixed point in the system dynamics. Also, $D^{c}= \left [ u, u^{\star} \right ]$ and $D=\varnothing$. In this case $\lambda$ should follow the following inequality:
+    \begin{equation}
+        \lambda \leq \lambda_l := min_{x \in \left [ u, u^{\star} \right ]} (x - V(\alpha x + u))/\gamma
+    \end{equation}
+
+\end{enumerate}
+What we have now is that the deterministic and constant policies $a(t)=0$ and $a(t)=1$ have cost $\gamma \lambda$ and $u$ respectively and $\xi$ must follow two conditions:
+\begin{itemize}
+    \item $\xi \geq min(\gamma \lambda, u)$
+    \item $\xi \geq min(\gamma \lambda, u)$ when $\lambda \in (\lambda_l, \lambda_u)$ and $\lambda_l$ and $\lambda_u$ are lower bound and upper bound, respectively. Also, $D$ and $D^{c}$ are non-empty.
+\end{itemize}
+
+There is also some $u^{+}\in \left ( u, u^{\star} \right )$ where pulling or not pulling an arm are equally good. In this case, $u^{\star}$ is an increasing function of $\lambda$. We can invert this function to obtain $g(x)$ defined as the value of $\lambda$ for which pulling or not pulling an arm are equally good choices, as an increasing function of $x\in(u, u^{+})$.
+\begin{lemm}
+  The sets $ [ u, u^{+})$ and $(u^{+}, u^{\star} ]$ correspond to $D$ and $D^{c}$ for some $u^{+} \in [ u, u^{+} ] $.
+\end{lemm}
+\begin{proof}
+    Since $V(.)$ is convex, there are two cases:
+    \begin{enumerate}
+        \item For some $u_2>u_1$, $D= [ u, u_l) \cap (u_2, u^{\star} ]$
+        \item For some $u^{+}, D= [u, u^{+}), D^{c}=(u^{+}, u^{\star} ]$
+    \end{enumerate}
+    But at $x=u^{\star}$, the optimal action is to pull the arm. Thus, $x^{\star} \in D^{c}$ and hence only the second condition can hold.
+\end{proof}
+
+\begin{corollari}
+ The map $x \rightarrow x - V(\alpha x+u)$ is monotone and non-decreasing in $\left [u, u^{\star}  \right ]$.
+\end{corollari}
+
+\subsection{The Index Policy}
+Let $\lambda=g(x)$ for some $x\in(u, u^{\star})$. After we pull the arm once, the state is reset to $u$. The optimal policy becomes periodic as follows: Do not pull an arm until the state enter $D^{c}$ and then pull the arm. Since finite initial deviations do not impact long-run behaviors, without loss of generality, we can assume $X(0)=u$ (i.e., initial state). Define $\tau(x)=min\left \{t: X(t) \in D^{c} \right \}$.
+\begin{eqnarray*}
+    X(\tau(x)) = (1-\alpha^{\tau(x)})u^{\star}\\
+    \Rightarrow \tau(x)=   \left \lceil log_{\alpha}^{+} (1-\frac{x}{u^\star}) \right \rceil
+\end{eqnarray*}
+% where $log_{\alpha}^{+}(x)=\begin{Bmatrix}
+% log_{\alpha}^{+}x, x>0\\ 
+% 0, otherwise
+% \end{Bmatrix}.$
+where:
+\begin{equation*}
+  \log_{\alpha}^{+}(x)=\{
+    \begin{array}{ll}
+      log_{\alpha}^{+}x, &  x>0\\
+      0, & otherwise
+    \end{array}
+\end{equation*}
+The long-run average cost equals the average over a single period. Therefor:
+\begin{equation}
+    \xi = \frac{\gamma \lambda(\tau(x)-1)+X(\tau(x))}{\tau(x)}
+\end{equation}
+Now, we can define the index for arm i as:
+\begin{equation}
+    g_i(x) = \frac{1}{\gamma_i}\left[\tau_i(x) \left\{(1-\alpha_i)x -u_i\right \}+\left \{ \frac{1-\alpha_i^{\tau_i(x)}}{1-\alpha_i} \right \}u_i \right ]
+\end{equation}
+where $\tau_i(x)$ is defined as:
+\begin{eqnarray*}
+       \left \lceil log_{\alpha}^{+} (\frac{u_i - (1-\alpha_i)x}{u_i}) \right \rceil
+\end{eqnarray*}
+Note that now we add $i$ subscript so that we can have independent indices for different arms. We pull $M$ arms with highest indices. Also, note that if an arm is pulled even once, the states $\{X_i(t)\}$ become discrete valued thereafter. The states depend on $u_i$ and $\alpha_i$ alone. 
+
+For an arm that is never pulled, the states can be restricted to discrete values depending on $X_i(0)$. If we restrict attention to these states, the index simplifies to:
+\begin{equation}
+    g_i(x)=\frac{1}{\gamma_i}\left [ \tau_i ((1-\alpha_i)x - u_i) + x \right ].
+\end{equation}
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol 
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+
+\section{Conclusion}
+
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Proof of ...}
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{perera2014}
+Perera, Charith, et al. "Sensing as a service model for smart cities supported by internet of things." Transactions on Emerging Telecommunications Technologies 25.1 (2014): 81-93.
+\bibitem{whittle1988}
+Whittle, Peter. "Restless bandits: Activity allocation in a changing world." Journal of applied probability 25.A (1988): 287-298.
+\bibitem{bartle2000}
+Bartle, Robert Gardner, and Donald R. Sherbert. Introduction to real analysis. Vol. 2. New York: Wiley, 2000.
+\bibitem{poppe1974}
+Poppe, Harry. Compactness in general function spaces. Deutscher Verlag der Wissenschaften, 1974.
+\end{thebibliography}
+
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
+\blindtext
+\end{IEEEbiography}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+
+% that's all folks
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
